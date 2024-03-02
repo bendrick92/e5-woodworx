@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<footer class='w-full mt-36 mb-6 flex flex-col gap-10'>
+  <div class='w-full flex flex-row justify-between items-center'>
+    <span class='text-center text-xs text-gray-500 font-heading font-light'>
+      &copy; {new Date().getFullYear()} E5 Woodworx
+    </span>
+    <ul class='flex flex-row gap-3'>
+      <li>
+        <a href='https://www.facebook.com/E5woodworx1' target='_blank' title='Find us on Facebook' class='flex items-center gap-1 no-underline text-xs font-light'>
+          <span>Find us on</span>
+          <Icon name='mdi:facebook' size={25} class='text-gray-500 hover:text-gray-800 cursor-pointer'/>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class='text-center text-xs text-gray-400'>
+    <span>Website by <a href='https://bpwalters.com' target='_blank' rel='noreferrer' class='cursor-pointer'>Ben Walters</a></span>
+  </div>
+</footer>

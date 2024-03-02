@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-gray-600 text-lg font-sans;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  body {
+    @apply min-h-screen h-full font-serif flex flex-col;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  p {
+    @apply mb-3;
+  }
+}
+
+@layer utilities {
+  .lazy-load,
+  .lazy-load-cascade > * {
+    @apply opacity-0;
+  }
+
+  .lazy-load.is-loaded,
+  .lazy-load-cascade > *.is-loaded {
+    animation: fadeIn ease 1.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+  }
+
+  .font-sub {
+    @apply font-sans font-light text-gray-400;
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    @apply opacity-0;
+  }
+
+  100% {
+    @apply opacity-100;
+  }
+}

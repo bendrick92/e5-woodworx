@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import logoImg from '../assets/logo.png';
+import {Icon} from 'astro-icon/components';
+---
+
+<script>
+  let pathname = '';
+
+  let a = document.createElement('a');
+  a.href = window.location;
+
+  pathname = a.pathname;
+
+  const body = document.querySelector('body');
+  const nav = document.querySelector('nav');
+  const hamburger = document.querySelector('#nav-hamburger');
+
+  hamburger.addEventListener('click', () => {
+    'open' in body.dataset ? delete body.dataset.open : body.dataset.open = '';
+    'open' in nav.dataset ? delete nav.dataset.open : nav.dataset.open = '';
+    'open' in hamburger.dataset ? delete hamburger.dataset.open : hamburger.dataset.open = '';
+  });
+</script>
+
+<header class='w-full sm:h-auto flex flex-col sm:flex-row justify-between sm:items-center z-20'>
+  <div class='my-[15px] sm:my-[30px] flex flex-row items-center justify-between z-20'>
+    <Image
+      src={logoImg}
+      alt='E5 Woodworx'
+      loading='eager'
+      class='w-[75px] h-[75px] sm:w-[100px] sm:h-[100px]'
+    />
+    <div id='nav-hamburger' class='w-[20px] h-[20px] flex flex-col sm:hidden cursor-pointer overflow-visible justify-center gap-1.5 data-open:gap-0 items-end data-open:items-center group'>
+      <div class='w-[20px] group-data-open:w-[25px] h-[2px] group-data-open:mt-[3px] group-data-open:rotate-[135deg] bg-black transition-all duration-300'></div>
+      <div class='w-3/4 group-data-open:w-0 h-[2px] bg-black transition-all duration-300'></div>
+      <div class='w-[20px] group-data-open:w-[25px] h-[2px] group-data-open:-mt-[3px] group-data-open:-rotate-[135deg] bg-black transition-all duration-300'></div>
+    </div>
+  </div>
+  <nav role='navigation' class='w-0 data-open:w-full sm:!w-auto h-screen sm:h-auto opacity-0 data-open:opacity-100 sm:!opacity-100 fixed left-0 top-0 sm:relative overflow-hidden flex flex-col justify-center transition-all ease-in-out duration-500 bg-white z-10'>
+    <ul class='flex flex-col sm:flex-row gap-7 justify-center sm:justify-end items-center text-xl sm:text-sm tracking-wide font-heading uppercase'>
+      <li>
+        <a href='#about' target='_self' title='Jump to About section' class='no-underline cursor-pointer hover:underline text-gray-500 hover:text-gray-800'>
+          About E5
+        </a>
+      </li>
+      <li>
+        <a href='#our-work' target='_self' title='Jump to Our Work section' class='no-underline cursor-pointer hover:underline text-gray-500 hover:text-gray-800'>
+          Our Work
+        </a>
+      </li>
+      <li>
+        <a href='#contact' target='_self' title='Jump to Contact section' class='no-underline cursor-pointer hover:underline text-gray-500 hover:text-gray-800'>
+          Contact
+        </a>
+      </li>
+      <li>
+        <a href='https://e5woodworx.square.site/s/shop' target='_self' rel='noreferrer' title='Visit the E5 Woodworx store page' class='no-underline cursor-pointer hover:underline text-gray-500 hover:text-gray-800'>
+          <Icon name='mdi:shopping-outline' size={25}/>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
