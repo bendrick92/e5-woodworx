@@ -8,13 +8,13 @@ import {Icon} from 'astro-icon/components';
   let pathname = '';
 
   let a = document.createElement('a');
-  a.href = window.location;
+  a.href = window.location.href;
 
   pathname = a.pathname;
 
-  const body = document.querySelector('body');
-  const nav = document.querySelector('nav');
-  const hamburger = document.querySelector('#nav-hamburger');
+  const body = document.querySelector('body') as HTMLElement;
+  const nav = document.querySelector('nav') as HTMLElement;
+  const hamburger = document.querySelector('#nav-hamburger') as HTMLElement;
 
   hamburger.addEventListener('click', () => {
     'open' in body.dataset ? delete body.dataset.open : body.dataset.open = '';

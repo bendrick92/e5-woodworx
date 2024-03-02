@@ -13,18 +13,22 @@ import Footer from '../components/Footer.astro';
   const lazyLoadObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        if (entry.target.tagName === 'img') {
-          if (entry.target.complete) {
-            entry.target.classList.add('is-loaded');
+        const target = entry.target as HTMLElement;
+
+        if (target.tagName === 'img') {
+          const imgTarget = target as HTMLImageElement;
+
+          if (imgTarget.complete) {
+            imgTarget.classList.add('is-loaded');
           }
           else {
-            entry.target.onload = () => {
-              entry.target.classList.add('is-loaded');
+            imgTarget.onload = () => {
+              imgTarget.classList.add('is-loaded');
             }
           }
         }
-        else if (entry.target.classList.contains('lazy-load-cascade')) {
-          const children = entry.target.children;
+        else if (target.classList.contains('lazy-load-cascade')) {
+          const children = target.children;
 
           for (let i = 0; i < children.length; i++) {
             children[i].classList.add('is-loaded');
@@ -32,7 +36,7 @@ import Footer from '../components/Footer.astro';
           }
         }
         else {
-          entry.target.classList.add('is-loaded');
+          target.classList.add('is-loaded');
         }
       }
     })
