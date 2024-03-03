@@ -5,26 +5,27 @@ import {Icon} from 'astro-icon/components';
 ---
 
 <script>
-  let pathname = '';
-
-  let a = document.createElement('a');
-  a.href = window.location.href;
-
-  pathname = a.pathname;
-
   const body = document.querySelector('body') as HTMLElement;
   const nav = document.querySelector('nav') as HTMLElement;
   const hamburger = document.querySelector('#nav-hamburger') as HTMLElement;
 
-  hamburger.addEventListener('click', () => {
+  const toggleNav = () => {
     'open' in body.dataset ? delete body.dataset.open : body.dataset.open = '';
     'open' in nav.dataset ? delete nav.dataset.open : nav.dataset.open = '';
     'open' in hamburger.dataset ? delete hamburger.dataset.open : hamburger.dataset.open = '';
+  };
+
+  hamburger.addEventListener('click', () => toggleNav());
+
+  const navLinks = document.querySelectorAll('nav a') as HTMLElement[];
+
+  navLinks.forEach((navLink) => {
+    navLink.addEventListener('click', () => toggleNav());
   });
 </script>
 
 <header class='w-full sm:h-auto flex flex-col sm:flex-row justify-between sm:items-center z-20'>
-  <div class='my-[15px] sm:my-[30px] flex flex-row items-center justify-between z-20'>
+  <div class='my-[25px] sm:my-[30px] flex flex-row items-center justify-between z-20'>
     <Image
       src={logoImg}
       alt='E5 Woodworx'
