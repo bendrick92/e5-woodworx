@@ -2,16 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import {Icon} from 'astro-icon/components';
 import { Image, getImage } from 'astro:assets';
-import flagHeroImg from '../assets/flag_hero.webp';
-import cuttingBoardImg from '../assets/cutting_board.webp';
-import cuttingBoardKnifeImg from '../assets/cutting_board_knife.webp';
+import flagsHero from '../assets/3-flags.jpg';
+import bourbonBoardImg from '../assets/bourbon-board.png';
+import cuttingBoardImg from '../assets/cutting-board.png';
+import trayImg from '../assets/tray.jpeg';
+import wineBoxImg from '../assets/wine-box.png';
 import flagDetailImg from '../assets/flag_detail.webp';
-import christmasTreeImg from '../assets/christmas_trees.webp';
-import charcuterieBoardImg from '../assets/charcuterie_board.webp';
-import flagPlaque from '../assets/flag_plaque.webp';
+import flagsCommissions from '../assets/flags-commissions.jpeg';
+import cuttingBoard2Img from '../assets/cutting-board-2.png';
+import charBoardImg from '../assets/charcuterie_board.webp';
+import threeFlagsImg from '../assets/3-flags-2.png';
 import Separator from '../components/Separator.astro';
 
-const flagDetailImgOptimized = await getImage({ src: flagDetailImg, format: 'webp' })
+const flagsHeroOptimized = await getImage({ src: flagsHero, format: 'webp' })
 ---
 
 <BaseLayout title=''>
@@ -23,29 +26,47 @@ const flagDetailImgOptimized = await getImage({ src: flagDetailImg, format: 'web
 				<span>American Made</span>
 			</h2>
 		</div>
-		<div class='w-full h-full bg-cover z-0 opacity-80 contrast-[80%] brightness-[30%]' style=`background-image:url('${flagDetailImgOptimized.src}')`></div>
+		<div class='w-full h-full bg-cover bg-center z-0 opacity-80 contrast-[80%] brightness-[30%]' style=`background-image:url('${flagsHeroOptimized.src}')`></div>
 	</section>
 	<section id='about' class='max-w-xl mt-8'>
 		<h1 class='mb-8 font-heading font-medium text-4xl text-center uppercase'>About E5</h1>
-		<p class='text-center'>My name is Steve Trevisan, and I'm a retired Marine Corp Sergeant and hobbyist woodworker.</p>
-		<div class='mt-6 mb-8 flex justify-center'>
+		<p>My name is Steve Trevisan, and I'm a Marine Corp veteran and hobbyist woodworker.</p>
+		<!--<div class='mt-6 mb-8 flex justify-center'>
 			<img
 				src='https://miro.medium.com/v2/resize:fit:1358/0*6bpYNSP606ce0l6_.jpg'
 				alt='Steve Trevisan'
 				class='w-96 h-auto'
 				loading='lazy'
 			/>
-		</div>
-		<p>I started E5 Woodworx in my basement - spending my weekends and free time honing my skills and producing high-quality woodworking goods for friends and family!</p>
-		<p>I believe in giving back to veterans and first responders; honoring their sacrifice and hard work through special commissions and charitable donations.</p>
+		</div>-->
+		<p>I started E5 Woodworx in my basement over 10 years ago - spending my weekends and free time honing my skills and producing high-quality woodworking goods for friends and family.</p>
+		<p>Having served in the Marines for six years, I believe in giving back to veterans and first responders; honoring their sacrifice and hard work through special commissions and charitable donations.</p>
 		<p>Feel free to take a look around and check out my <a href='https://e5woodworx.square.site/s/shop' target='_self' rel='noreferrer'  title='Visit the E5 Woodworx store'>store</a> or <a href='#contact' target='_self' title='Jump to Contact section'>contact me</a> if you'd like to discuss a special project!</p>
 		<p><em>-Steve</em></p>
 	</section>
 	<Separator/>
-	<section id='our-work' class='max-w-3xl'>
-		<h1 class='mb-8 font-heading font-medium text-4xl text-center uppercase'>Our Work</h1>
-		<p>We make a wide variety of items using the finest quality exotic and domestic hardwoods. See below for some of the products we create, and be sure to <a href='https://e5woodworx.square.site/s/shop' target='_self' title='Visit the E5 Woodworx store'>visit our Store</a> to purchase these items and more!</p>
+	<section id='my-work' class='max-w-3xl'>
+		<h1 class='mb-8 font-heading font-medium text-4xl text-center uppercase'>My Work</h1>
+		<p>I make a wide variety of items using the finest quality exotic and domestic hardwoods. See the gallery below for some of the items I've created, and be sure to <a href='https://e5woodworx.square.site/s/shop' target='_self' title='Visit the E5 Woodworx store'>visit my Store</a> to purchase these items and more!</p>
+		<div class='mt-10 my-12 flex flex-row justify-center'>
+			<a href='https://e5woodworx.square.site/s/shop' target='_self' title='Visit the E5 Woodworx store' class='px-8 py-3 text-sm bg-blue-400 text-white hover:bg-blue-500 font-heading uppercase no-underline rounded-lg flex flex-row gap-1.5 items-center'>
+				<Icon name='mdi:shopping-outline' size={18}/>
+				<span>Visit the E5 Store</span>
+			</a>
+		</div>
 		<div class='mt-8 columns-1 sm:columns-2 md:columns-3 gap-7'>
+			<Image
+				src={charBoardImg}
+				alt='E5 Woodworx charcuterie board'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
+			<Image
+				src={bourbonBoardImg}
+				alt='E5 Woodworx bourbon board'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
 			<Image
 				src={cuttingBoardImg}
 				alt='E5 Woodworx cutting board'
@@ -53,32 +74,38 @@ const flagDetailImgOptimized = await getImage({ src: flagDetailImg, format: 'web
 				loading='lazy'
 			/>
 			<Image
-				src={cuttingBoardKnifeImg}
-				alt='E5 Woodworx knife'
+				src={flagsCommissions}
+				alt='E5 Woodworx American flags commissions'
 				class='w-full h-auto mb-7'
 				loading='lazy'
 			/>
 			<Image
-				src={flagHeroImg}
+				src={trayImg}
+				alt='E5 Woodworx tray'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
+			<Image
+				src={wineBoxImg}
+				alt='E5 Woodworx wine box'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
+			<Image
+				src={threeFlagsImg}
+				alt='E5 Woodworx American flags'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
+			<Image
+				src={flagDetailImg}
 				alt='E5 Woodworx American flag'
 				class='w-full h-auto mb-7'
 				loading='lazy'
 			/>
 			<Image
-				src={christmasTreeImg}
-				alt='E5 Woodworx christmas trees'
-				class='w-full h-auto mb-7'
-				loading='lazy'
-			/>
-			<Image
-				src={charcuterieBoardImg}
-				alt='E5 Woodworx charcuterie board'
-				class='w-full h-auto mb-7'
-				loading='lazy'
-			/>
-			<Image
-				src={flagPlaque}
-				alt='E5 Woodworx American flag commission'
+				src={cuttingBoard2Img}
+				alt='E5 Woodworx cutting board'
 				class='w-full h-auto mb-7'
 				loading='lazy'
 			/>
@@ -87,8 +114,8 @@ const flagDetailImgOptimized = await getImage({ src: flagDetailImg, format: 'web
 	<Separator/>
 	<section id='contact' class='max-w-xl'>
 		<h1 class='mb-8 font-heading font-medium text-4xl text-center uppercase'>Contact Us</h1>
-		<p>Questions about our work, or have a special request?</p>
-		<p>Use the form the below or <a href='mailto:e5woodworx@gmail.com' target='_self'>send us an email</a> and we'll be in touch.</p>
+		<p>Questions about my work, or have a special request?</p>
+		<p>Use the form the below or <a href='mailto:e5woodworx@gmail.com' target='_self'>send us an email</a> and I'll be in touch.</p>
 		<div class='mt-6 flex justify-center'>
 			<form action='https://api.web3forms.com/submit' method='POST' class='w-full max-w-72'>
 				<input type='hidden' name='access_key' value='5771594f-be55-410a-b7b6-f2c3f338783e'/>
@@ -100,7 +127,7 @@ const flagDetailImgOptimized = await getImage({ src: flagDetailImg, format: 'web
 					<input type='email' id='email' name='email' placeholder='john.doe@gmail.com' required class='w-full grow text-sm border border-gray-400 p-2'/>
 					<label for='message' class='hidden'>Message</label>
 					<textarea id='message' name='message' placeholder='I would like to talk!' required class='w-full grow text-sm border border-gray-400 p-2'></textarea>
-					<button type='submit' class='py-2 text-sm bg-blue-400 text-white hover:bg-blue-500 font-heading uppercase'>
+					<button type='submit' class='py-3 text-sm bg-blue-400 text-white hover:bg-blue-500 rounded-lg font-heading uppercase'>
 						Send
 					</button>
 				</div>
