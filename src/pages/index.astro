@@ -12,6 +12,10 @@ import flagsCommissions from '../assets/flags-commissions.jpeg';
 import cuttingBoard2Img from '../assets/cutting-board-2.png';
 import charBoardImg from '../assets/charcuterie_board.webp';
 import threeFlagsImg from '../assets/3-flags-2.png';
+import givingBackQuintero from '../assets/giving-back-quintero.png';
+import givingBackCortez from '../assets/giving-back-cortez.jpeg'
+import givingBackMuth from '../assets/giving-back-muth.png'
+import givingBackVfw from '../assets/giving-back-vfw.jpeg';
 import Separator from '../components/Separator.astro';
 
 const flagsHeroOptimized = await getImage({ src: flagsHero, format: 'webp' })
@@ -112,10 +116,50 @@ const flagsHeroOptimized = await getImage({ src: flagsHero, format: 'webp' })
 		</div>
 	</section>
 	<Separator/>
+	<section id='giving-back' class='max-w-xl'>
+		<h1 class='mb-8 font-heading font-medium text-4xl text-center uppercase'>Giving Back</h1>
+		<p>At E5 Woodworx, we recognize military veterans, active duty military, and first responders as true American heroes. Each of them has made sacrifices and committed to keeping us safe.</p>
+		<p>While not all have faced battles abroad or on our streets, each has made a commitment to keeping us safe, both at home and overseas. To honor these heroes, we offer a small gift as a token of our appreciation and to thank them for their service. We want them to know they are not forgotten.</p>
+		<div class='mt-8 columns-1 sm:columns-2 gap-7'>
+			<Image
+				src={givingBackQuintero}
+				alt='E5 Woodworx commissioned flag'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
+			<Image
+				src={givingBackCortez}
+				alt='E5 Woodworx commissioned flag'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
+			<Image
+				src={givingBackVfw}
+				alt='E5 Woodworx commissioned flag'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
+			<Image
+				src={givingBackMuth}
+				alt='E5 Woodworx commissioned flag'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
+		</div>
+		<p>If you or someone you know is a veteran, active duty, or a first responder, please reach out using the <a href=''#contact' target='_self'>Contact Me form</a> below.</p>
+		<p>Thank you to all who have served, are serving, and those who have made sacrifices for this country.</p>
+		<div class='mt-10 my-12 flex flex-row justify-center'>
+			<a href='#contact' target='_self' title='Nomination for Giving Back' class='px-8 py-3 text-sm bg-blue-400 text-white hover:bg-blue-500 font-heading uppercase no-underline rounded-lg flex flex-row gap-1.5 items-center'>
+				<Icon name='mdi:star' size={18}/>
+				<span>Nominate Someone</span>
+			</a>
+		</div>
+	</section>
+	<Separator/>
 	<section id='contact' class='max-w-xl'>
 		<h1 class='mb-8 font-heading font-medium text-4xl text-center uppercase'>Contact Me</h1>
-		<p>Questions about my work, or have a special request?</p>
-		<p>Use the form the below or <a href='mailto:e5woodworx@gmail.com' target='_self'>send me an email</a> and I'll be in touch.</p>
+		<p>Have questions about my work, a special request? Know a veteran or first responder you'd like to nominate for our <a href='#giving-back' target='_self'>Giving Back program</a>?</p>
+		<p>Use the form the below or <a href='mailto:e5woodworx@gmail.com' target='_self'>send me an email</a> and I'll be in touch!</p>
 		<div class='mt-6 flex justify-center'>
 			<form action='https://api.web3forms.com/submit' method='POST' class='w-full max-w-72'>
 				<input type='hidden' name='access_key' value='13448027-bf9a-4701-9622-c8469f2b363f'/>
