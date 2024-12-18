@@ -12,10 +12,16 @@ import flagsCommissions from '../assets/flags-commissions.jpeg';
 import cuttingBoard2Img from '../assets/cutting-board-2.png';
 import charBoardImg from '../assets/charcuterie_board.webp';
 import threeFlagsImg from '../assets/3-flags-2.png';
+import charcuterieBoardImg from '../assets/charcuterie-board-2.jpg';
+import cuttingBoardKnifeImg from '../assets/cutting_board_knife.webp';
+import shadowBoxVideo from '../assets/shadow-box.mp4';
+import shadowBoxThumb from '../assets/shadow-box-thumb.jpg';
 import givingBackQuintero from '../assets/giving-back-quintero.png';
 import givingBackCortez from '../assets/giving-back-cortez.jpeg'
 import givingBackMuth from '../assets/giving-back-muth.png'
 import givingBackVfw from '../assets/giving-back-vfw.jpeg';
+import givingBack5 from '../assets/giving-back-5.jpg';
+import givingBack6 from '../assets/giving-back-6.jpg';
 import Separator from '../components/Separator.astro';
 
 const flagsHeroOptimized = await getImage({ src: flagsHero, format: 'webp' })
@@ -113,6 +119,25 @@ const flagsHeroOptimized = await getImage({ src: flagsHero, format: 'webp' })
 				class='w-full h-auto mb-7'
 				loading='lazy'
 			/>
+			<Image
+				src={charcuterieBoardImg}
+				alt='E5 Woodworx charcuterie board'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
+			<Image
+				src={cuttingBoardKnifeImg}
+				alt='E5 Woodworx cutting board'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
+		</div>
+		<div class='mt-1 sm:mt-14 flex items-center justify-center'>
+			<div class='w-full max-w-lg aspect-video'>
+				<video controls muted poster={shadowBoxThumb.src} class='object-cover'>
+					<source src={shadowBoxVideo} type='video/mp4'>
+				</video>
+			</div>
 		</div>
 	</section>
 	<Separator/>
@@ -145,8 +170,20 @@ const flagsHeroOptimized = await getImage({ src: flagsHero, format: 'webp' })
 				class='w-full h-auto mb-7'
 				loading='lazy'
 			/>
+			<Image
+				src={givingBack5}
+				alt='E5 Woodworx commissioned flag'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
+			<Image
+				src={givingBack6}
+				alt='E5 Woodworx commissioned flag'
+				class='w-full h-auto mb-7'
+				loading='lazy'
+			/>
 		</div>
-		<p>If you or someone you know is a veteran, active duty, or a first responder, please reach out using the <a href=''#contact' target='_self'>Contact Me form</a> below.</p>
+		<p class='mt-8'>If you or someone you know is a veteran, active duty, or a first responder, please reach out using the <a href=''#contact' target='_self'>Contact Me form</a> below.</p>
 		<p>Thank you to all who have served, are serving, and those who have made sacrifices for this country.</p>
 		<div class='mt-10 my-12 flex flex-row justify-center'>
 			<a href='#contact' target='_self' title='Nomination for Giving Back' class='px-8 py-3 text-sm bg-blue-400 text-white hover:bg-blue-500 font-heading uppercase no-underline rounded-lg flex flex-row gap-1.5 items-center'>
